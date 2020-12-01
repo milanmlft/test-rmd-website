@@ -7,11 +7,11 @@ on:
   pull_request:
     branches:
       - master
-      
+
 jobs:
   render:
     runs-on: macOS-latest
-    
+
     steps:
       - name: Check out repo
         uses: actions/checkout@v2
@@ -31,11 +31,6 @@ jobs:
         run: |
           brew cask install xquartz
 
-      - name: Install dependencies
-        run: |
-          source("install.R")
-        shell: Rscript {0}
-
       - name: Session info
         run: |
           install.packages('sessioninfo', Ncpus = 2L)
@@ -43,12 +38,12 @@ jobs:
           pkgs <- installed.packages()[, "Package"]
           sessioninfo::session_info(pkgs, include_base = TRUE)
         shell: Rscript {0}
-        
+
       - name: Render site
         run: |
           rmarkdown::render_site()
         shell: Rscript {0}
-      
+
       - name: Deploy 🚀
         if: github.event_name == 'push'
         uses: JamesIves/github-pages-deploy-action@3.6.2
