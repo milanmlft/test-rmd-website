@@ -4,7 +4,7 @@ install.packages(c("remotes", "BiocManager"), Ncpus = 2L)
 BiocManager::install(
   c(
     "tidyverse", "devtools", "rmarkdown", "knitr",
-    "gganimate", "magick"
+    "gganimate", "magick", "locfdr", "gridExtra"
   ),
   Ncpus = 2L)
 
