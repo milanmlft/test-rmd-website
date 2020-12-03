@@ -323,24 +323,33 @@ $(document).ready(function () {
 <p>You can also embed plots, for example:</p>
 <p><img src="test_files/figure-html/pressure-1.png" width="672" /></p>
 <p>Note that the <code>echo = FALSE</code> parameter was added to the code chunk to prevent printing of the R code that generated the plot.</p>
+<!-- ## Test including emoji characters -->
+<!-- Requires setting `latex_engine = xelatex` in YAML header! -->
+<!-- \[X= -->
+<!-- \left[\begin{array}{ccc} -->
+<!-- -&\mathbf{x}_{1}^T &- \\ -->
+<!-- \vdots&\vdots&\vdots\\ -->
+<!-- -&\mathbf{x}_{i}^T &- \\ -->
+<!-- \vdots&\vdots&\vdots\\ -->
+<!-- -&\mathbf{x}_{n}^T &- \\ -->
+<!-- \end{array}\right]_{n \times p} -->
+<!-- \begin{array}{c} -->
+<!-- 💇\\\\ -->
+<!-- 👮\\ -->
+<!-- \\ -->
+<!-- 👸\\ -->
+<!-- \end{array} -->
+<!-- \] -->
 </div>
-<div id="test-including-emoji-characters" class="section level2">
-<h2>Test including emoji characters</h2>
-<p><span class="math display">\[X=
-\left[\begin{array}{ccc}
--&amp;\mathbf{x}_{1}^T &amp;- \\
-\vdots&amp;\vdots&amp;\vdots\\
--&amp;\mathbf{x}_{i}^T &amp;- \\
-\vdots&amp;\vdots&amp;\vdots\\
--&amp;\mathbf{x}_{n}^T &amp;- \\
-\end{array}\right]_{n \times p}
-\begin{array}{c}
-💇\\\\
-👮\\
-\\
-👸\\
-\end{array}
-\]</span></p>
+<div id="test-animations" class="section level2">
+<h2>Test animations</h2>
+<pre class="r"><code>library(gganimate)</code></pre>
+<pre><code>## Loading required package: ggplot2</code></pre>
+<pre class="r"><code>p &lt;- ggplot(iris, aes(x = Petal.Width, y = Petal.Length)) +
+  geom_point()
+p</code></pre>
+<p><img src="test_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p><img src="test_files/figure-html/unnamed-chunk-2-1.gif" /><!-- --></p>
 </div>
 
 
