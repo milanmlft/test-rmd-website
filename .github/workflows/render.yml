@@ -36,7 +36,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          install.packages("rmarkdown")
+          install.packages(c("rmarkdown", "remotes"))
+          remotes::install_github("hadley/emo")
         shell: Rscript {0}
 
       - name: Session info
