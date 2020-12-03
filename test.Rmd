@@ -2,8 +2,6 @@
 title: "Untitled"
 output:
     html_document: default
-    pdf_document:
-        latex_engine: xelatex
 ---
 
 ```{r setup, include=FALSE}
@@ -30,20 +28,41 @@ plot(pressure)
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
-## Test including emoji characters
+<!-- ## Test including emoji characters -->
 
-\[X=
-\left[\begin{array}{ccc}
--&\mathbf{x}_{1}^T &- \\
-\vdots&\vdots&\vdots\\
--&\mathbf{x}_{i}^T &- \\
-\vdots&\vdots&\vdots\\
--&\mathbf{x}_{n}^T &- \\
-\end{array}\right]_{n \times p}
-\begin{array}{c}
-`r set.seed(1);emo::ji("beauty")`\\\\
-`r set.seed(1);emo::ji("cop")`\\
-\\
-`r set.seed(1);emo::ji("blonde")`\\
-\end{array}
-\]
+<!-- Requires setting `latex_engine = xelatex` in YAML header! -->
+
+<!-- \[X= -->
+<!-- \left[\begin{array}{ccc} -->
+<!-- -&\mathbf{x}_{1}^T &- \\ -->
+<!-- \vdots&\vdots&\vdots\\ -->
+<!-- -&\mathbf{x}_{i}^T &- \\ -->
+<!-- \vdots&\vdots&\vdots\\ -->
+<!-- -&\mathbf{x}_{n}^T &- \\ -->
+<!-- \end{array}\right]_{n \times p} -->
+<!-- \begin{array}{c} -->
+<!-- `r set.seed(1);emo::ji("beauty")`\\\\ -->
+<!-- `r set.seed(1);emo::ji("cop")`\\ -->
+<!-- \\ -->
+<!-- `r set.seed(1);emo::ji("blonde")`\\ -->
+<!-- \end{array} -->
+<!-- \] -->
+
+
+## Test animations
+
+```{r}
+library(gganimate)
+p <- ggplot(iris, aes(x = Petal.Width, y = Petal.Length)) +
+  geom_point()
+p
+```
+
+```{r, echo=FALSE, message=FALSE}
+anim <- p +
+  transition_states(Species,
+                    transition_length = 2,
+                    state_length = 1)
+
+anim
+```
