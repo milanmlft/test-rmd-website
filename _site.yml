@@ -12,4 +12,4 @@ output:
       theme: cosmo
       highlight: tango
       df_print: paged
-new_session: false
+new_session: true
