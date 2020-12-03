@@ -2,6 +2,7 @@
 title: "Untitled"
 output:
     html_document: default
+    pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -58,7 +59,11 @@ p <- ggplot(iris, aes(x = Petal.Width, y = Petal.Length)) +
 p
 ```
 
-```{r, echo=FALSE, message=FALSE}
+```{r}
+knitr::is_html_output()
+```
+
+```{r, echo=FALSE, message=FALSE, eval=knitr::is_html_output()}
 anim <- p +
   transition_states(Species,
                     transition_length = 2,
