@@ -63,7 +63,7 @@ p
 knitr::is_html_output()
 ```
 
-```{r, echo=FALSE, message=FALSE, include=knitr::is_html_output()}
+```{r, echo=FALSE, message=FALSE, eval=knitr::is_html_output()}
 anim <- p +
   transition_states(Species,
                     transition_length = 2,
