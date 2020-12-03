@@ -1,7 +1,9 @@
 ---
 title: "Untitled"
 output:
-    pdf_document: default
+    html_document: default
+    pdf_document:
+        latex_engine: xelatex
 ---
 
 ```{r setup, include=FALSE}
@@ -27,3 +29,21 @@ plot(pressure)
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+## Test including emoji characters
+
+\[X=
+\left[\begin{array}{ccc}
+-&\mathbf{x}_{1}^T &- \\
+\vdots&\vdots&\vdots\\
+-&\mathbf{x}_{i}^T &- \\
+\vdots&\vdots&\vdots\\
+-&\mathbf{x}_{n}^T &- \\
+\end{array}\right]_{n \times p}
+\begin{array}{c}
+`r set.seed(1);emo::ji("beauty")`\\\\
+`r set.seed(1);emo::ji("cop")`\\
+\\
+`r set.seed(1);emo::ji("blonde")`\\
+\end{array}
+\]
