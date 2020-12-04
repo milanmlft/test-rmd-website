@@ -50,24 +50,24 @@ Note that the `echo = FALSE` parameter was added to the code chunk to prevent pr
 <!-- \] -->
 
 
-## Test animations
+<!-- ## Test animations -->
 
-```{r}
-library(gganimate)
-p <- ggplot(iris, aes(x = Petal.Width, y = Petal.Length)) +
-  geom_point()
-p
-```
+<!-- ```{r} -->
+<!-- library(gganimate) -->
+<!-- p <- ggplot(iris, aes(x = Petal.Width, y = Petal.Length)) + -->
+<!--   geom_point() -->
+<!-- p -->
+<!-- ``` -->
 
-```{r}
-knitr::is_html_output()
-```
+<!-- ```{r} -->
+<!-- knitr::is_html_output() -->
+<!-- ``` -->
 
-```{r, echo=FALSE, message=FALSE, eval=knitr::is_html_output()}
-anim <- p +
-  transition_states(Species,
-                    transition_length = 2,
-                    state_length = 1)
+<!-- ```{r, echo=FALSE, message=FALSE, eval=knitr::is_html_output()} -->
+<!-- anim <- p + -->
+<!--   transition_states(Species, -->
+<!--                     transition_length = 2, -->
+<!--                     state_length = 1) -->
 
-anim
-```
+<!-- anim -->
+<!-- ``` -->
